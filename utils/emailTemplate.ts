@@ -177,7 +177,7 @@ export const generateEmailHtml = (data: EmailData): string => {
                                 <tr>
                                     <td align="center" style="padding-bottom: 24px;">
                                         <p class="body-text" style="margin: 0; font-family: 'Inter', Arial, sans-serif; font-weight: 400; font-size: 16px; line-height: 1.6; color: rgba(255, 255, 255, 0.8);">
-                                            I have a short case study document that shows exactly how we did it for them. Would you be open to me sending you the link to look over?
+                                            I have a short portfolio showing our work and exactly how we did it for them. Would you be open to me sending you the link to look over?
                                         </p>
                                     </td>
                                 </tr>
