@@ -1,7 +1,7 @@
 import { EmailData } from "../types";
 
 export const generateEmailHtml = (data: EmailData): string => {
-  return `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    return `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -221,6 +221,9 @@ export const generateEmailHtml = (data: EmailData): string => {
                                         </a>
                                         <a href="https://www.facebook.com/newgenmarketing" target="_blank" style="display: inline-block; width: 44px; height: 44px; background: rgba(112, 125, 252, 0.08); border: 1px solid rgba(112, 125, 252, 0.15); border-radius: 50%; text-align: center; line-height: 44px; text-decoration: none; margin: 0 8px;">
                                             <img src="https://cdn-icons-png.flaticon.com/512/174/174848.png" alt="Facebook" width="18" height="18" style="display: inline-block; vertical-align: middle; filter: brightness(0) invert(1); opacity: 0.7;">
+                                        </a>
+                                        <a href="https://wa.me/263771415610" target="_blank" style="display: inline-block; width: 44px; height: 44px; background: rgba(112, 125, 252, 0.08); border: 1px solid rgba(112, 125, 252, 0.15); border-radius: 50%; text-align: center; line-height: 44px; text-decoration: none; margin: 0 8px;">
+                                            <img src="https://cdn-icons-png.flaticon.com/512/4423/4423697.png" alt="WhatsApp" width="18" height="18" style="display: inline-block; vertical-align: middle; filter: brightness(0) invert(1); opacity: 0.7;">
                                         </a>
                                         <a href="https://newgenmarketing.netlify.app/" target="_blank" style="display: inline-block; width: 44px; height: 44px; background: rgba(112, 125, 252, 0.08); border: 1px solid rgba(112, 125, 252, 0.15); border-radius: 50%; text-align: center; line-height: 44px; text-decoration: none; margin: 0 8px;">
                                             <img src="https://cdn-icons-png.flaticon.com/512/1006/1006771.png" alt="Website" width="18" height="18" style="display: inline-block; vertical-align: middle; filter: brightness(0) invert(1); opacity: 0.7;">
