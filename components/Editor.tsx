@@ -12,7 +12,7 @@ const Editor: React.FC<EditorProps> = ({ data, onChange }) => {
   };
 
   const handleMetricChange = (index: number, field: keyof Metric, value: string) => {
-    const newMetrics = [...data.metrics] as [Metric, Metric, Metric];
+    const newMetrics = [...data.metrics];
     newMetrics[index] = { ...newMetrics[index], [field]: value };
     onChange({ ...data, metrics: newMetrics });
   };
@@ -28,22 +28,22 @@ const Editor: React.FC<EditorProps> = ({ data, onChange }) => {
         {/* Header Section */}
         <div className="space-y-4">
           <h3 className="text-sm uppercase tracking-wider text-cyan-500 font-semibold border-b border-zinc-800 pb-2">Header Info</h3>
-          
+
           <div>
-             <label className="block text-xs font-medium text-gray-400 mb-1">Recipient Name Variable</label>
-             <input
-               type="text"
-               value={data.recipientName}
-               onChange={(e) => handleChange('recipientName', e.target.value)}
-               className="w-full bg-black border border-zinc-700 rounded p-2 text-sm text-white focus:border-cyan-500 focus:outline-none"
-             />
+            <label className="block text-xs font-medium text-gray-400 mb-1">Recipient Name Variable</label>
+            <input
+              type="text"
+              value={data.recipientName}
+              onChange={(e) => handleChange('recipientName', e.target.value)}
+              className="w-full bg-black border border-zinc-700 rounded p-2 text-sm text-white focus:border-cyan-500 focus:outline-none"
+            />
           </div>
         </div>
 
         {/* Body Section */}
         <div className="space-y-4">
           <h3 className="text-sm uppercase tracking-wider text-cyan-500 font-semibold border-b border-zinc-800 pb-2">Body Content</h3>
-          
+
           <div className="relative">
             <label className="block text-xs font-medium text-gray-400 mb-1">Introduction Paragraph</label>
             <textarea
@@ -102,15 +102,15 @@ const Editor: React.FC<EditorProps> = ({ data, onChange }) => {
                     />
                   </div>
                 </div>
-                 <div>
-                    <label className="block text-[10px] text-gray-500">Label</label>
-                    <input
-                      type="text"
-                      value={metric.label}
-                      onChange={(e) => handleMetricChange(index, 'label', e.target.value)}
-                      className="w-full bg-zinc-900 border border-zinc-700 rounded p-1 text-sm text-white focus:border-cyan-500 outline-none"
-                    />
-                  </div>
+                <div>
+                  <label className="block text-[10px] text-gray-500">Label</label>
+                  <input
+                    type="text"
+                    value={metric.label}
+                    onChange={(e) => handleMetricChange(index, 'label', e.target.value)}
+                    className="w-full bg-zinc-900 border border-zinc-700 rounded p-1 text-sm text-white focus:border-cyan-500 outline-none"
+                  />
+                </div>
               </div>
             ))}
           </div>
@@ -119,7 +119,7 @@ const Editor: React.FC<EditorProps> = ({ data, onChange }) => {
         {/* CTA Section */}
         <div className="space-y-4">
           <h3 className="text-sm uppercase tracking-wider text-cyan-500 font-semibold border-b border-zinc-800 pb-2">Call to Action</h3>
-          
+
           <div>
             <label className="block text-xs font-medium text-gray-400 mb-1">Button Text</label>
             <input
@@ -144,7 +144,7 @@ const Editor: React.FC<EditorProps> = ({ data, onChange }) => {
         {/* Footer Section */}
         <div className="space-y-4">
           <h3 className="text-sm uppercase tracking-wider text-cyan-500 font-semibold border-b border-zinc-800 pb-2">Footer</h3>
-          
+
           <div>
             <label className="block text-xs font-medium text-gray-400 mb-1">Sign-off Name</label>
             <input

@@ -13,7 +13,7 @@ export interface EmailData {
   ctaText: string;
   ctaLink: string;
   signoffName: string;
-  metrics: [Metric, Metric, Metric];
+  metrics: Metric[];
 }
 
 export const INITIAL_EMAIL_DATA: EmailData = {
@@ -25,8 +25,7 @@ export const INITIAL_EMAIL_DATA: EmailData = {
   ctaLink: "mailto:sales@newgenmarketingzw.com?subject=Yes,%20send%20me%20the%20link",
   signoffName: "Waleed",
   metrics: [
-    { value: "150", suffix: "M", suffixColor: "#707dfc", label: "Impressions" },
-    { value: "300", suffix: "%", suffixColor: "#555dfc", label: "Engagement" },
-    { value: "10", suffix: "x", suffixColor: "#4046e0", label: "ROI" }
+    { value: "10", suffix: "M+", suffixColor: "#707dfc", label: "Views" },
+    { value: "1000", suffix: "%+", suffixColor: "#555dfc", label: "Engagement" }
   ]
 };

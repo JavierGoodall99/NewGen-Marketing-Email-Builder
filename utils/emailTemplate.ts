@@ -153,18 +153,18 @@ export const generateEmailHtml = (data: EmailData): string => {
                         <td align="center" class="metric-wrapper" style="padding: 0 32px 48px 32px; background-color: #000000;">
                             <table role="presentation" class="metric-table" border="0" cellpadding="0" cellspacing="0" width="100%" style="background: linear-gradient(180deg, rgba(112, 125, 252, 0.04) 0%, rgba(85, 93, 252, 0.02) 100%); border: 1px solid rgba(112, 125, 252, 0.12); border-radius: 20px;">
                                 <tr class="metric-row">
-                                    <td class="metric-cell" width="33%" align="center" valign="middle" style="padding: 32px 16px; border-right: 1px solid rgba(112, 125, 252, 0.1);">
-                                        <span class="metric-value" style="font-family: 'Playfair Display', Georgia, serif; font-weight: 400; font-size: 42px; color: #ffffff; display: block; line-height: 1; white-space: nowrap;">${data.metrics[0].value}<span style="color: ${data.metrics[0].suffixColor};">${data.metrics[0].suffix}</span></span>
-                                        <span class="metric-label" style="font-family: 'Inter', Arial, sans-serif; font-weight: 500; font-size: 10px; color: rgba(255, 255, 255, 0.45); letter-spacing: 2px; text-transform: uppercase; display: block; margin-top: 10px;">${data.metrics[0].label}</span>
-                                    </td>
-                                    <td class="metric-cell" width="34%" align="center" valign="middle" style="padding: 32px 16px; border-right: 1px solid rgba(112, 125, 252, 0.1);">
-                                        <span class="metric-value" style="font-family: 'Playfair Display', Georgia, serif; font-weight: 400; font-size: 42px; color: #ffffff; display: block; line-height: 1; white-space: nowrap;">${data.metrics[1].value}<span style="color: ${data.metrics[1].suffixColor};">${data.metrics[1].suffix}</span></span>
-                                        <span class="metric-label" style="font-family: 'Inter', Arial, sans-serif; font-weight: 500; font-size: 10px; color: rgba(255, 255, 255, 0.45); letter-spacing: 2px; text-transform: uppercase; display: block; margin-top: 10px;">${data.metrics[1].label}</span>
-                                    </td>
-                                    <td class="metric-cell metric-cell-last" width="33%" align="center" valign="middle" style="padding: 32px 16px;">
-                                        <span class="metric-value" style="font-family: 'Playfair Display', Georgia, serif; font-weight: 400; font-size: 42px; color: #ffffff; display: block; line-height: 1; white-space: nowrap;">${data.metrics[2].value}<span style="color: ${data.metrics[2].suffixColor};">${data.metrics[2].suffix}</span></span>
-                                        <span class="metric-label" style="font-family: 'Inter', Arial, sans-serif; font-weight: 500; font-size: 10px; color: rgba(255, 255, 255, 0.45); letter-spacing: 2px; text-transform: uppercase; display: block; margin-top: 10px;">${data.metrics[2].label}</span>
-                                    </td>
+                                    ${data.metrics.map((metric, index) => {
+        const isLast = index === data.metrics.length - 1;
+        const width = Math.floor(100 / data.metrics.length);
+        const cellClass = isLast ? 'metric-cell metric-cell-last' : 'metric-cell';
+        const borderStyle = isLast ? '' : 'border-right: 1px solid rgba(112, 125, 252, 0.1);';
+
+        return `
+                                    <td class="${cellClass}" width="${width}%" align="center" valign="middle" style="padding: 32px 16px; ${borderStyle}">
+                                        <span class="metric-value" style="font-family: 'Playfair Display', Georgia, serif; font-weight: 400; font-size: 42px; color: #ffffff; display: block; line-height: 1; white-space: nowrap;">${metric.value}<span style="color: ${metric.suffixColor};">${metric.suffix}</span></span>
+                                        <span class="metric-label" style="font-family: 'Inter', Arial, sans-serif; font-weight: 500; font-size: 10px; color: rgba(255, 255, 255, 0.45); letter-spacing: 2px; text-transform: uppercase; display: block; margin-top: 10px;">${metric.label}</span>
+                                    </td>`;
+    }).join('')}
                                 </tr>
                             </table>
                         </td>
