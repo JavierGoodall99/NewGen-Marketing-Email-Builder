@@ -143,21 +143,21 @@ function App() {
                       className={`p-1.5 rounded-md transition-all ${viewMode === 'desktop' ? 'bg-zinc-700 text-cyan-400' : 'text-zinc-500 hover:text-zinc-300'}`}
                       title="Desktop View"
                     >
-                      <img src="https://cdn-icons-png.flaticon.com/512/482/482469.png" alt="Desktop View" className="brightness-0 invert opacity-70 w-4 h-4" />
+                      <img src="https://cdn-icons-png.flaticon.com/512/482/482469.png" alt="Desktop View" className="brightness-0 invert opacity-70 w-5 h-5" />
                     </button>
                     <button
                       onClick={() => setViewMode('tablet')}
                       className={`p-1.5 rounded-md transition-all ${viewMode === 'tablet' ? 'bg-zinc-700 text-cyan-400' : 'text-zinc-500 hover:text-zinc-300'}`}
                       title="Tablet View (max-width: 620px)"
                     >
-                      <img src="https://cdn-icons-png.flaticon.com/512/7192/7192457.png" alt="Tablet View" className="brightness-0 invert opacity-70 w-4 h-4 " />
+                      <img src="https://cdn-icons-png.flaticon.com/512/7192/7192457.png" alt="Tablet View" className="brightness-0 invert opacity-70 w-5 h-5 " />
                     </button>
                     <button
                       onClick={() => setViewMode('mobile')}
                       className={`p-1.5 rounded-md transition-all ${viewMode === 'mobile' ? 'bg-zinc-700 text-cyan-400' : 'text-zinc-500 hover:text-zinc-300'}`}
                       title="Mobile View (max-width: 480px)"
                     >
-                      <img src="https://cdn-icons-png.flaticon.com/512/4443/4443113.png" alt="Mobile View" className="brightness-0 invert opacity-70 w-5 h-5" />
+                      <img src="https://cdn-icons-png.flaticon.com/512/4443/4443113.png" alt="Mobile View" className="brightness-0 invert opacity-70 w-6 h-6" />
                     </button>
                   </div>
 
