@@ -25,9 +25,9 @@ const Editor: React.FC<EditorProps> = ({ data, onChange }) => {
       </div>
 
       <div className="space-y-6 md:space-y-8 pb-12">
-        {/* Header Section */}
+        {/* Variables Section */}
         <div className="space-y-4">
-          <h3 className="text-sm uppercase tracking-wider text-cyan-500 font-semibold border-b border-zinc-800 pb-2">Header Info</h3>
+          <h3 className="text-sm uppercase tracking-wider text-cyan-500 font-semibold border-b border-zinc-800 pb-2">Variables</h3>
 
           <div>
             <label className="block text-xs font-medium text-gray-400 mb-1">Recipient Name Variable</label>
@@ -35,6 +35,16 @@ const Editor: React.FC<EditorProps> = ({ data, onChange }) => {
               type="text"
               value={data.recipientName}
               onChange={(e) => handleChange('recipientName', e.target.value)}
+              className="w-full bg-black border border-zinc-700 rounded p-2 text-sm text-white focus:border-cyan-500 focus:outline-none"
+            />
+          </div>
+
+          <div>
+            <label className="block text-xs font-medium text-gray-400 mb-1">Sender Name Variable</label>
+            <input
+              type="text"
+              value={data.senderName}
+              onChange={(e) => handleChange('senderName', e.target.value)}
               className="w-full bg-black border border-zinc-700 rounded p-2 text-sm text-white focus:border-cyan-500 focus:outline-none"
             />
           </div>
@@ -141,20 +151,7 @@ const Editor: React.FC<EditorProps> = ({ data, onChange }) => {
           </div>
         </div>
 
-        {/* Footer Section */}
-        <div className="space-y-4">
-          <h3 className="text-sm uppercase tracking-wider text-cyan-500 font-semibold border-b border-zinc-800 pb-2">Footer</h3>
 
-          <div>
-            <label className="block text-xs font-medium text-gray-400 mb-1">Sign-off Name</label>
-            <input
-              type="text"
-              value={data.signoffName}
-              onChange={(e) => handleChange('signoffName', e.target.value)}
-              className="w-full bg-black border border-zinc-700 rounded p-2 text-sm text-white focus:border-cyan-500 focus:outline-none"
-            />
-          </div>
-        </div>
       </div>
     </div>
   );

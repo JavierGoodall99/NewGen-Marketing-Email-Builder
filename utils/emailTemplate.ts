@@ -133,15 +133,15 @@ export const generateEmailHtml = (data: EmailData): string => {
                                         </p>
                                         
                                         <p class="body-text" style="margin: 0 0 24px 0; font-family: 'Inter', Arial, sans-serif; font-weight: 400; font-size: 16px; line-height: 1.6; color: rgba(255, 255, 255, 0.8);">
-                                            ${data.introText}
+                                            ${data.introText.replace(/\[\[senderName\]\]/g, data.senderName)}
                                         </p>
 
                                         <p class="body-text" style="margin: 0 0 24px 0; font-family: 'Inter', Arial, sans-serif; font-weight: 400; font-size: 16px; line-height: 1.6; color: rgba(255, 255, 255, 0.8);">
-                                            ${data.valuePropText}
+                                            ${data.valuePropText.replace(/\[\[senderName\]\]/g, data.senderName)}
                                         </p>
 
                                         <p class="body-text" style="margin: 0 0 32px 0; font-family: 'Inter', Arial, sans-serif; font-weight: 400; font-size: 16px; line-height: 1.6; color: rgba(255, 255, 255, 0.8);">
-                                            ${data.proofText}
+                                            ${data.proofText.replace(/\[\[senderName\]\]/g, data.senderName)}
                                         </p>
                                     </td>
                                 </tr>
@@ -193,7 +193,7 @@ export const generateEmailHtml = (data: EmailData): string => {
                                 <tr>
                                     <td align="center" style="padding-top: 30px;">
                                         <p class="body-text" style="margin: 0; font-family: 'Inter', Arial, sans-serif; font-weight: 400; font-size: 16px; line-height: 1.6; color: rgba(255, 255, 255, 0.6);">
-                                            Best,<br>${data.signoffName}
+                                            Best,<br>${data.senderName}
                                         </p>
                                     </td>
                                 </tr>
